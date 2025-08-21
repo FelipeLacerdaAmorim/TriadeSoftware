@@ -5,25 +5,25 @@ export const dashboardProjects = [
     id: 1,
     title: 'Dashboard Financeiro',
     description: 'Painel de controle completo para análise financeira com gráficos interativos e relatórios personalizados.',
-    image: '/images/portfolio/dashboards/dashboard_1.jfif',
+    image: '/images/portfolio/dashboards/dashboard1.jfif',
   },
   {
     id: 2,
     title: 'Dashboard de Marketing',
     description: 'Visualização de métricas de campanhas de marketing, ROI e performance de canais em tempo real.',
-    image: '/images/portfolio/dashboards/dashboard_2.jfif',
+    image: '/images/portfolio/dashboards/dashboard2.jfif',
   },
   {
     id: 3,
-    title: 'Dashboard de Vendas',
-    description: 'Acompanhamento de vendas, metas, comissões e performance da equipe comercial com alertas inteligentes.',
-    image: '/images/portfolio/dashboards/dashboard_3.jfif',
+    title: 'Dashboard de Atendimento',
+    description: 'Acompanhamento de atendimento, metas, comissões e performance da equipe com alertas inteligentes.',
+    image: '/images/portfolio/dashboards/dashboard3.png',
   },
   {
     id: 4,
     title: 'Dashboard Operacional',
     description: 'Monitoramento de processos operacionais, logística e indicadores de produtividade em uma única tela.',
-    image: '/images/portfolio/dashboards/dashboard_4.jpeg',
+    image: '/images/portfolio/dashboards/dashboard4.jfif',
   }
 ];
 
