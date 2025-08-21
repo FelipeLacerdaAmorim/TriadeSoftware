@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 interface LoadingProps {
   size?: 'sm' | 'md' | 'lg'
   text?: string
@@ -14,21 +16,14 @@ export default function Loading({ size = 'md', text = 'Carregando...', className
   return (
     <div className={`flex flex-col items-center justify-center space-y-4 ${className}`}>
       {/* Triade Logo Loading Animation */}
-      <div className="relative flex items-end justify-center space-x-1">
-        {/* Triângulo 1 - Azul Principal */}
-        <div className="relative">
-          <div className="w-0 h-0 border-l-[6px] border-r-[6px] border-b-[10px] border-l-transparent border-r-transparent border-b-blue-600 animate-pulse"></div>
-        </div>
-        
-        {/* Triângulo 2 - Cyan */}
-        <div className="relative transform translate-y-[-3px]">
-          <div className="w-0 h-0 border-l-[6px] border-r-[6px] border-b-[12px] border-l-transparent border-r-transparent border-b-cyan-500 animate-pulse animation-delay-200"></div>
-        </div>
-        
-        {/* Triângulo 3 - Azul Escuro */}
-        <div className="relative transform translate-y-[-6px]">
-          <div className="w-0 h-0 border-l-[6px] border-r-[6px] border-b-[14px] border-l-transparent border-r-transparent border-b-blue-800 animate-pulse animation-delay-400"></div>
-        </div>
+      <div className="relative flex items-center justify-center">
+        <Image
+          src="/triade-logo-colored-no-text.svg"
+          alt="Triade Software Logo"
+          width={32}
+          height={28}
+          className="animate-pulse"
+        />
       </div>
 
       {/* Loading Spinner */}
@@ -76,4 +71,4 @@ export function LoadingOverlay({ isVisible = false }: { isVisible?: boolean }) {
       </div>
     </div>
   )
-} 
+}

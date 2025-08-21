@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { usePathname } from 'next/navigation'
@@ -30,43 +31,51 @@ export default function Header() {
 
   const isActive = (href: string) => {
     if (href === '/') {
-      return pathname === '/'
+      return pathname === '/' || pathname === '/pt'
     }
-    return pathname.startsWith(href) || (href.includes('#') && pathname === '/')
+    return pathname.includes(href) || (href.includes('#') && (pathname === '/' || pathname === '/pt'))
   }
 
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-blue-100' 
-          : pathname === '/' ? 'bg-transparent' : 'bg-white/95 backdrop-blur-md shadow-lg border-b border-blue-100'
+          ? 'bg-white/95 backdrop-blur-md shadow-lg' 
+          : (pathname === '/' || pathname === '/pt') ? 'bg-transparent' : 'bg-white/95 backdrop-blur-md shadow-lg'
       }`}
     >
+      {/* Border animado */}
+      <div 
+        className={`absolute bottom-0 left-0 right-0 h-px bg-blue-100 transition-opacity duration-300 ${
+          scrolled || (pathname !== '/' && pathname !== '/pt') ? 'opacity-100' : 'opacity-0'
+        }`}
+      />
       <nav className="container mx-auto">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
-            {/* Logo CSS - Três Triângulos */}
-            <div className="relative w-12 h-10 flex items-end justify-center space-x-1">
-              {/* Triângulo 1 - Azul Principal */}
-              <div className="relative">
-                <div className="w-0 h-0 border-l-[8px] border-r-[8px] border-b-[14px] border-l-transparent border-r-transparent border-b-blue-600 transform transition-all duration-300 group-hover:scale-110 group-hover:border-b-blue-700"></div>
-                <div className="absolute inset-0 w-0 h-0 border-l-[8px] border-r-[8px] border-b-[14px] border-l-transparent border-r-transparent border-b-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-              
-              {/* Triângulo 2 - Cyan */}
-              <div className="relative transform translate-y-[-4px]">
-                <div className="w-0 h-0 border-l-[8px] border-r-[8px] border-b-[16px] border-l-transparent border-r-transparent border-b-cyan-500 transform transition-all duration-300 group-hover:scale-110 group-hover:border-b-cyan-600 animation-delay-200"></div>
-                <div className="absolute inset-0 w-0 h-0 border-l-[8px] border-r-[8px] border-b-[16px] border-l-transparent border-r-transparent border-b-cyan-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animation-delay-200"></div>
-              </div>
-              
-              {/* Triângulo 3 - Azul Escuro */}
-              <div className="relative transform translate-y-[-8px]">
-                <div className="w-0 h-0 border-l-[8px] border-r-[8px] border-b-[18px] border-l-transparent border-r-transparent border-b-blue-800 transform transition-all duration-300 group-hover:scale-110 group-hover:border-b-blue-900 animation-delay-400"></div>
-                <div className="absolute inset-0 w-0 h-0 border-l-[8px] border-r-[8px] border-b-[18px] border-l-transparent border-r-transparent border-b-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animation-delay-400"></div>
-              </div>
-              
+            {/* Logo SVG */}
+            <div className="relative w-12 h-10 flex items-center justify-center">
+              {/* Logo Branca - Visível no topo */}
+              <Image
+                src="/triade-logo-white-symbol.svg"
+                alt="Triade Software Logo"
+                width={48}
+                height={40}
+                className={`absolute transform transition-all duration-500 group-hover:scale-110 ${
+                  scrolled || (pathname !== '/' && pathname !== '/pt') ? 'opacity-0' : 'opacity-100'
+                }`}
+              />
+              {/* Logo Colorida - Visível ao rolar */}
+              <Image
+                src="/triade-logo-colored-no-text.svg"
+                alt="Triade Software Logo"
+                width={48}
+                height={40}
+                className={`absolute transform transition-all duration-500 group-hover:scale-110 ${
+                  scrolled || (pathname !== '/' && pathname !== '/pt') ? 'opacity-100' : 'opacity-0'
+                }`}
+              />
               {/* Glow Effect */}
               <div className="absolute inset-0 bg-gradient-to-t from-blue-500/20 to-cyan-500/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
@@ -74,12 +83,12 @@ export default function Header() {
             {/* Brand Text */}
             <div className="flex flex-col">
               <span className={`text-xl font-bold font-display transition-colors duration-300 ${
-                scrolled ? 'text-gray-900' : pathname === '/' ? 'text-white' : 'text-gray-900'
+                scrolled ? 'text-gray-900' : (pathname === '/' || pathname === '/pt') ? 'text-white' : 'text-gray-900'
               } group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent`}>
                 Triade Software
               </span>
               <span className={`text-xs font-medium transition-colors duration-300 ${
-                scrolled ? 'text-blue-600' : pathname === '/' ? 'text-blue-200' : 'text-blue-600'
+                scrolled ? 'text-blue-600' : (pathname === '/' || pathname === '/pt') ? 'text-blue-200' : 'text-blue-600'
               }`}>
                 Inteligência Digital
               </span>
@@ -96,10 +105,10 @@ export default function Header() {
                   isActive(item.href)
                     ? scrolled 
                       ? 'text-blue-600' 
-                      : pathname === '/' ? 'text-white' : 'text-blue-600'
+                      : (pathname === '/' || pathname === '/pt') ? 'text-white' : 'text-blue-600'
                     : scrolled
                       ? 'text-gray-700 hover:text-blue-600'
-                      : pathname === '/' ? 'text-blue-100 hover:text-white' : 'text-gray-700 hover:text-blue-600'
+                      : (pathname === '/' || pathname === '/pt') ? 'text-blue-100 hover:text-white' : 'text-gray-700 hover:text-blue-600'
                 }`}
               >
                 {item.name}
@@ -130,7 +139,7 @@ export default function Header() {
             className={`lg:hidden p-2 rounded-lg transition-colors duration-300 ${
               scrolled
                 ? 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
-                : pathname === '/' ? 'text-white hover:text-blue-200 hover:bg-white/10' : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                : (pathname === '/' || pathname === '/pt') ? 'text-white hover:text-blue-200 hover:bg-white/10' : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
             }`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >

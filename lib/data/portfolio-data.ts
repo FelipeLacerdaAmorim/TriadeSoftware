@@ -24,78 +24,60 @@ export const dashboardProjects = [
     title: 'Dashboard Operacional',
     description: 'Monitoramento de processos operacionais, logística e indicadores de produtividade em uma única tela.',
     image: '/images/portfolio/dashboards/dashboard_4.jpeg',
-  },
-  {
-    id: 5,
-    title: 'Dashboard de RH',
-    description: 'Gestão de indicadores de recursos humanos, turnover, contratações e clima organizacional.',
-    image: '/images/portfolio/dashboard.jpg',
   }
 ];
 
 export const webappProjects = [
   {
     id: 1,
-    title: 'Plataforma de E-commerce',
-    description: 'Solução completa para vendas online com gestão de produtos, pagamentos e logística integrada.',
-    image: '/images/portfolio/ecommerce.jpg',
+    title: 'E-commerce Cafeteria',
+    description: 'Solução completa para vendas online de uma cafeteria.',
+    image: '/images/portfolio/webapps/web1.png',
   },
   {
     id: 2,
-    title: 'Sistema de Gestão Escolar',
-    description: 'Plataforma para instituições de ensino gerenciarem matrículas, notas, frequência e comunicação.',
-    image: '/images/portfolio/education.jpg',
+    title: 'Plataforma de Aprovação de Workflows',
+    description: 'Plataforma para criação de fluxos de aprovação personalizados para processos empresariais.',
+    image: '/images/portfolio/webapps/web2.png',
   },
   {
     id: 3,
-    title: 'Portal de Atendimento',
-    description: 'Sistema web para gestão de tickets, base de conhecimento e atendimento multicanal ao cliente.',
-    image: '/images/portfolio/delivery.jpg',
+    title: 'Sistema de Monitoramento e Logging Centralizado',
+    description: 'Sistema web para monitoramento de logs, métricas e alertas de sistemas distribuídos.',
+    image: '/images/portfolio/webapps/web3.png',
   },
   {
     id: 4,
-    title: 'Intranet Corporativa',
-    description: 'Ambiente digital para comunicação interna, gestão de documentos e processos empresariais.',
-    image: '/images/portfolio/erp.jpg',
-  },
-  {
-    id: 5,
-    title: 'Plataforma de Telemedicina',
-    description: 'Solução para consultas médicas online, prontuário eletrônico e gestão de receitas digitais.',
-    image: '/images/portfolio/health.jpg',
+    title: 'Web Scraper Empresarial',
+    description: 'Aplicação para extração de dados de websites empresariais com ferramentas de análise e processamento.',
+    image: '/images/portfolio/webapps/web4.png',
   }
 ];
 
 export const desktopProjects = [
   {
     id: 1,
-    title: 'Sistema ERP Completo',
-    description: 'Software de gestão empresarial integrado com módulos financeiro, estoque, vendas e produção.',
-    image: '/images/portfolio/erp.jpg',
+    title: 'App de Dieta e Nutrição',
+    description: 'Aplicativo para contagem de calorias e monitoramento de dieta.',
+    image: '/images/portfolio/desktop/desktop1.png',
   },
   {
     id: 2,
-    title: 'Software de Automação Industrial',
-    description: 'Solução para controle e monitoramento de processos industriais com interface intuitiva.',
-    image: '/images/portfolio/dashboard.jpg',
+    title: 'Software de Gestão de Estoque',
+    description: 'Solução para controle e monitoramento de estoque com funcionalidades de cadastro, compras, vendas e relatórios.',
+    image: '/images/portfolio/desktop/desktop2.png',
   },
   {
     id: 3,
-    title: 'Sistema de Gestão de Clínicas',
-    description: 'Software para administração de clínicas médicas com agendamento, prontuário e faturamento.',
-    image: '/images/portfolio/health.jpg',
+    title: 'Sistema de Monitoramento de Portas e Drivers',
+    description: 'Software para administração e monitoramento de portas e drivers de dispositivos.',
+    image: '/images/portfolio/desktop/desktop3.png',
   },
   {
     id: 4,
-    title: 'PDV e Controle de Estoque',
-    description: 'Solução completa para ponto de venda com controle de estoque, fiscal e financeiro integrados.',
-    image: '/images/portfolio/ecommerce.jpg',
-  },
-  {
-    id: 5,
-    title: 'Software de Gestão de Projetos',
-    description: 'Ferramenta para planejamento, execução e monitoramento de projetos com metodologias ágeis.',
-    image: '/images/portfolio/delivery.jpg',
+    title: 'Sistema de Monitoramento de Rede',
+    description: 'Solução para monitoramento de rede com funcionalidades de análise de tráfego, detecção de problemas e relatórios.',
+    image: '/images/portfolio/desktop/desktop4.png',
   }
 ];
 
@@ -109,19 +91,7 @@ export const otherApplicationTypes = [
     description: 'Soluções para integrar diferentes sistemas e plataformas através de APIs e middlewares personalizados.',
   },
   {
-    title: 'Sistemas Embarcados',
-    description: 'Desenvolvimento de software para dispositivos IoT, equipamentos médicos e sistemas de automação.',
-  },
-  {
     title: 'Inteligência Artificial',
     description: 'Implementação de soluções de IA para análise preditiva, reconhecimento de padrões e automação de processos.',
-  },
-  {
-    title: 'Realidade Virtual e Aumentada',
-    description: 'Criação de experiências imersivas para treinamento, marketing e visualização de produtos.',
-  },
-  {
-    title: 'Blockchain e Smart Contracts',
-    description: 'Desenvolvimento de aplicações descentralizadas e contratos inteligentes para diversos setores.',
   }
 ];

@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaTwitter, FaInstagram, FaGithub, FaArrowUp, FaCode, FaRocket, FaHeart } from 'react-icons/fa'
 
 const quickLinks = [
@@ -62,26 +63,15 @@ export default function Footer() {
             <div className="lg:col-span-1">
               {/* Logo */}
               <Link href="/" className="flex items-center space-x-3 group mb-6">
-                {/* Logo CSS - Três Triângulos */}
-                <div className="relative w-12 h-10 flex items-end justify-center space-x-1">
-                  {/* Triângulo 1 - Azul Principal */}
-                  <div className="relative">
-                    <div className="w-0 h-0 border-l-[8px] border-r-[8px] border-b-[14px] border-l-transparent border-r-transparent border-b-blue-400 transform transition-all duration-300 group-hover:scale-110 group-hover:border-b-blue-300"></div>
-                    <div className="absolute inset-0 w-0 h-0 border-l-[8px] border-r-[8px] border-b-[14px] border-l-transparent border-r-transparent border-b-blue-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </div>
-                  
-                  {/* Triângulo 2 - Cyan */}
-                  <div className="relative transform translate-y-[-4px]">
-                    <div className="w-0 h-0 border-l-[8px] border-r-[8px] border-b-[16px] border-l-transparent border-r-transparent border-b-cyan-400 transform transition-all duration-300 group-hover:scale-110 group-hover:border-b-cyan-300 animation-delay-200"></div>
-                    <div className="absolute inset-0 w-0 h-0 border-l-[8px] border-r-[8px] border-b-[16px] border-l-transparent border-r-transparent border-b-cyan-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animation-delay-200"></div>
-                  </div>
-                  
-                  {/* Triângulo 3 - Azul Escuro */}
-                  <div className="relative transform translate-y-[-8px]">
-                    <div className="w-0 h-0 border-l-[8px] border-r-[8px] border-b-[18px] border-l-transparent border-r-transparent border-b-blue-600 transform transition-all duration-300 group-hover:scale-110 group-hover:border-b-blue-500 animation-delay-400"></div>
-                    <div className="absolute inset-0 w-0 h-0 border-l-[8px] border-r-[8px] border-b-[18px] border-l-transparent border-r-transparent border-b-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animation-delay-400"></div>
-                  </div>
-                  
+                {/* Logo SVG */}
+                <div className="relative w-12 h-10 flex items-center justify-center">
+                  <Image
+                    src="/triade-logo-colored-no-text.svg"
+                    alt="Triade Software Logo"
+                    width={48}
+                    height={40}
+                    className="transform transition-all duration-300 group-hover:scale-110 brightness-0 invert"
+                  />
                   {/* Glow Effect */}
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-500/20 to-cyan-500/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
@@ -241,4 +231,4 @@ export default function Footer() {
       </div>
     </footer>
   )
-} 
+}

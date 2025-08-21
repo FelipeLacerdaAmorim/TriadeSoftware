@@ -2,12 +2,13 @@
 
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
-import { FaRocket, FaUsers, FaCode, FaTrophy, FaClock, FaHeart } from 'react-icons/fa'
+import Link from 'next/link'
+import { FaRocket, FaCode, FaClock, FaHeart, FaArrowRight } from 'react-icons/fa'
 
 const stats = [
   {
     icon: FaRocket,
-    number: 200,
+    number: 50,
     suffix: '+',
     label: 'Projetos Entregues',
     description: 'Soluções desenvolvidas com excelência',
@@ -15,19 +16,11 @@ const stats = [
   },
   {
     icon: FaClock,
-    number: 8,
+    number: 4,
     suffix: '+',
     label: 'Anos de Experiência',
     description: 'Construindo o futuro digital',
     color: 'text-green-600'
-  },
-  {
-    icon: FaUsers,
-    number: 150,
-    suffix: '+',
-    label: 'Clientes Satisfeitos',
-    description: 'Empresas que confiam em nós',
-    color: 'text-purple-600'
   },
   {
     icon: FaHeart,
@@ -39,19 +32,11 @@ const stats = [
   },
   {
     icon: FaCode,
-    number: 50,
+    number: 25,
     suffix: '+',
     label: 'Tecnologias',
     description: 'Ferramentas e frameworks dominados',
     color: 'text-orange-600'
-  },
-  {
-    icon: FaTrophy,
-    number: 25,
-    suffix: '+',
-    label: 'Prêmios',
-    description: 'Reconhecimentos conquistados',
-    color: 'text-yellow-600'
   }
 ]
 
@@ -99,6 +84,7 @@ function CountUp({ end, duration = 2000, suffix = '' }: { end: number; duration?
 
 export default function Stats() {
   return (
+    <>
     <section className="section bg-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
@@ -137,7 +123,7 @@ export default function Stats() {
         </motion.div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -180,41 +166,76 @@ export default function Stats() {
           ))}
         </div>
 
-        {/* Bottom Section */}
-        <motion.div 
-          className="text-center mt-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <div className="max-w-4xl mx-auto bg-gradient-to-r from-primary to-primary-dark rounded-2xl p-8 md:p-12 text-white relative overflow-hidden">
-            {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-4 right-4 w-20 h-20 border border-white/20 rounded-full"></div>
-              <div className="absolute bottom-4 left-4 w-16 h-16 border border-white/20 rounded-full"></div>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 border border-white/10 rounded-full"></div>
-            </div>
+      </div>
+    </section>
 
-            <div className="relative z-10">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4 font-display">
-                Pronto para fazer parte dessas estatísticas?
-              </h3>
-              <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-                Junte-se aos nossos clientes satisfeitos e transforme seu negócio 
-                com soluções digitais inovadoras.
-              </p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn btn-secondary btn-lg"
-                onClick={() => window.location.href = '/contato'}
-              >
-                Começar Meu Projeto
-              </motion.button>
-            </div>
-          </div>
-        </motion.div>
+    {/* CTA Section */}
+    <section className="section bg-white relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary via-primary-dark to-blue-900"></div>
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-white/10 rounded-full blur-3xl animate-pulse animation-delay-200"></div>
+        
+        {/* Geometric Patterns */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-20 h-20 border border-white/30 rounded-full"></div>
+          <div className="absolute top-20 right-20 w-16 h-16 border border-white/20 rounded-lg rotate-45"></div>
+          <div className="absolute bottom-20 left-20 w-12 h-12 bg-white/20 rounded-full"></div>
+          <div className="absolute bottom-10 right-10 w-24 h-24 border border-white/15 rounded-full"></div>
+        </div>
+      </div>
+
+      <div className="container mx-auto relative z-10">
+        <div className="text-center text-white">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="py-8"
+          >
+            <motion.h2 
+              className="text-4xl md:text-5xl font-bold font-display mb-8 leading-tight"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              Pronto para fazer parte dessas <span className="text-secondary">estatísticas</span>?
+            </motion.h2>
+
+            <motion.p 
+              className="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto mb-12 leading-relaxed"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              Transforme sua ideia em realidade com nossa expertise em desenvolvimento de software. 
+              Junte-se aos nossos clientes satisfeitos!
+            </motion.p>
+
+            <motion.div 
+               className="flex justify-center"
+               initial={{ opacity: 0, y: 30 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.8, delay: 0.5 }}
+               viewport={{ once: true }}
+             >
+               <Link
+                 href="/contato"
+                 className="btn btn-secondary btn-lg group relative overflow-hidden"
+               >
+                 <span className="relative z-10 flex items-center">
+                   Começar Meu Projeto
+                   <FaArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                 </span>
+                 <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+               </Link>
+             </motion.div>
+          </motion.div>
+        </div>
       </div>
 
       {/* Floating Elements */}
@@ -223,5 +244,6 @@ export default function Stats() {
       <div className="absolute bottom-32 left-10 w-5 h-5 border-2 border-secondary/30 rotate-45 animate-spin-slow hidden lg:block"></div>
       <div className="absolute bottom-20 left-32 w-2 h-2 bg-primary/30 rounded-full animate-pulse animation-delay-400 hidden lg:block"></div>
     </section>
+    </>
   )
-} 
+}

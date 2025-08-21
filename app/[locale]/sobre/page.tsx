@@ -150,7 +150,7 @@ export default function Sobre() {
       {/* Missão, Visão e Valores */}
       <section className="section bg-gradient-to-b from-white to-slate-50">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-8">
             {/* Missão */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -274,106 +274,7 @@ export default function Sobre() {
         </div>
       </section>
 
-      {/* Nossa Equipe */}
-      <section className="section bg-white" id="equipe">
-        <div className="container mx-auto">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="section-title">
-              Nossa <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Equipe</span>
-            </h2>
-            <p className="section-subtitle">
-              Conheça os especialistas apaixonados por tecnologia que fazem 
-              a diferença em cada projeto da Triade Software.
-            </p>
-          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {equipe.map((membro, index) => (
-              <motion.div
-                key={membro.nome}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group"
-              >
-                <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-blue-200 text-center relative overflow-hidden">
-                  {/* Background Pattern */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-500">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full blur-3xl"></div>
-                  </div>
-
-                  <div className="relative z-10">
-                    {/* Avatar */}
-                    <div className="relative w-24 h-24 mx-auto mb-6">
-                      <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full animate-pulse"></div>
-                      <div className="relative w-full h-full bg-gradient-to-br from-blue-600 to-cyan-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                        <span className="text-white font-bold text-2xl">
-                          {membro.avatar}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Info */}
-                    <h3 className="text-xl font-bold text-gray-900 mb-2 font-display group-hover:text-blue-600 transition-colors">
-                      {membro.nome}
-                    </h3>
-                    <p className="text-blue-600 font-semibold mb-4">
-                      {membro.cargo}
-                    </p>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                      {membro.bio}
-                    </p>
-
-                    {/* Especialidades */}
-                    <div className="flex flex-wrap gap-2 justify-center mb-6">
-                      {membro.especialidades.map((especialidade) => (
-                        <span
-                          key={especialidade}
-                          className="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-medium border border-blue-200"
-                        >
-                          {especialidade}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* Social Links */}
-                    <div className="flex justify-center space-x-3">
-                      <a
-                        href={membro.social.linkedin}
-                        className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-400 hover:bg-blue-600 hover:text-white transition-colors"
-                        aria-label="LinkedIn"
-                      >
-                        <FaLinkedin className="w-4 h-4" />
-                      </a>
-                      <a
-                        href={membro.social.github}
-                        className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-400 hover:bg-slate-800 hover:text-white transition-colors"
-                        aria-label="GitHub"
-                      >
-                        <FaGithub className="w-4 h-4" />
-                      </a>
-                      <a
-                        href={membro.social.twitter}
-                        className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-400 hover:bg-cyan-500 hover:text-white transition-colors"
-                        aria-label="Twitter"
-                      >
-                        <FaTwitter className="w-4 h-4" />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA Final */}
       <section className="section bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white relative overflow-hidden">
@@ -400,7 +301,7 @@ export default function Sobre() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold font-display mb-6">
-              Pronto para Conhecer Nossa Equipe <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Pessoalmente</span>?
+              Pronto para Conhecer <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Nossa</span> <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Equipe</span>?
             </h2>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
               Agende uma conversa conosco e descubra como podemos transformar 

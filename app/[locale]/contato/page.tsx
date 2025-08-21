@@ -55,9 +55,23 @@ export default function Contato() {
     <div className="pt-20">
       {/* Hero Section */}
       <section className="section hero-gradient text-white relative overflow-hidden">
+        {/* Background Pattern */}
         <div className="absolute inset-0">
           <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-white/10 rounded-full blur-3xl animate-pulse animation-delay-200"></div>
+          
+          {/* Circuit Pattern */}
+          <div className="absolute inset-0 opacity-5">
+            <svg width="100%" height="100%" viewBox="0 0 100 100" className="w-full h-full">
+              <defs>
+                <pattern id="circuit-contato" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <circle cx="2" cy="2" r="1" fill="currentColor"/>
+                  <path d="M2,2 L18,2 M2,2 L2,18" stroke="currentColor" strokeWidth="0.5"/>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#circuit-contato)"/>
+            </svg>
+          </div>
         </div>
 
         <div className="container mx-auto relative z-10">

@@ -12,8 +12,8 @@ const floatingElements = [
 ]
 
 const stats = [
-  { number: '200+', label: 'Projetos Entregues', icon: FaRocket },
-  { number: '8+', label: 'Anos de Experiência', icon: FaLaptopCode },
+  { number: '50+', label: 'Projetos Entregues', icon: FaRocket },
+  { number: '4+', label: 'Anos de Experiência', icon: FaLaptopCode },
   { number: '100%', label: 'Satisfação dos Clientes', icon: FaUsers },
 ]
 
@@ -71,7 +71,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <span className="block">Transformamos</span>
-              <span className="block gradient-text bg-gradient-to-r from-secondary to-yellow-300 bg-clip-text text-transparent">
+              <span className="block gradient-text bg-gradient-to-r from-blue-300 to-cyan-200 bg-clip-text text-transparent">
                 Ideias em Software
               </span>
             </motion.h1>
@@ -167,4 +167,4 @@ export default function Hero() {
       <div className="absolute bottom-20 left-40 w-2 h-2 bg-secondary rounded-full animate-pulse animation-delay-600 hidden lg:block"></div>
     </section>
   )
-} 
+}

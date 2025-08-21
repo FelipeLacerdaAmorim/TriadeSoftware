@@ -14,7 +14,7 @@ import {
   FaNodeJs,
   FaPython
 } from 'react-icons/fa'
-import { SiNextdotjs, SiFlutter, SiWordpress } from 'react-icons/si'
+import { SiNextdotjs, SiFlutter, SiWordpress, SiAngular, SiVuedotjs, SiDotnet, SiTauri, SiSpring } from 'react-icons/si'
 
 const services = [
   {
@@ -28,26 +28,26 @@ const services = [
       'Portais Corporativos',
       'APIs Robustas'
     ],
-    technologies: [FaReact, SiNextdotjs, FaNodeJs, FaPython],
+    technologies: [FaReact, SiNextdotjs, FaNodeJs, FaPython, SiDotnet, SiTauri, SiSpring],
     color: 'from-blue-500 to-blue-600',
     href: '/servicos/sistemas'
   },
   {
-    icon: FaMobile,
-    title: 'Aplicativos Mobile',
-    description: 'Apps nativos e híbridos para iOS e Android que conectam sua empresa aos clientes de forma inovadora.',
+    icon: FaDatabase,
+    title: 'Dashboard & Análise de Dados',
+    description: 'Dashboards interativos e sistemas de análise de dados que transformam informações em insights estratégicos.',
     features: [
-      'Apps iOS e Android',
-      'Progressive Web Apps',
-      'Apps Híbridos',
-      'Interface Intuitiva',
-      'Push Notifications'
+      'Dashboards Interativos',
+      'Relatórios Automatizados',
+      'Análise de Performance',
+      'Visualização de Dados',
+      'Business Intelligence'
     ],
-    technologies: [SiFlutter, FaReact],
+    technologies: [FaPython, FaReact, SiNextdotjs],
     color: 'from-green-500 to-green-600',
-    href: '/servicos/mobile'
-  },
-  {
+    href: '/servicos/dashboard'
+   },
+   {
     icon: FaShoppingCart,
     title: 'E-commerce',
     description: 'Lojas virtuais completas com integração de pagamentos, gestão de estoque e ferramentas de marketing digital.',
@@ -58,7 +58,7 @@ const services = [
       'Marketing Digital',
       'Analytics Avançado'
     ],
-    technologies: [SiWordpress, FaReact, SiNextdotjs],
+    technologies: [SiAngular, SiVuedotjs, FaReact, SiNextdotjs],
     color: 'from-purple-500 to-purple-600',
     href: '/servicos/ecommerce'
   },
@@ -242,4 +242,4 @@ export default function Services() {
       </div>
     </section>
   )
-} 
+}
